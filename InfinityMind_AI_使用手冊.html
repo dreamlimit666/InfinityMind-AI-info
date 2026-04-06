@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfinityMind_AI_使用手冊</title>
+    
+    <style>
+        @media print {
+            @page {
+                margin: 2cm;
+                size: A4;
+            }
+            
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            img {
+                page-break-inside: avoid;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+            }
+            
+            pre, blockquote {
+                page-break-inside: avoid;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", 
+                         Helvetica, Arial, sans-serif, "Microsoft JhengHei", "微軟正黑體";
+            font-size: 16px;
+            line-height: 1.6;
+            color: #24292e;
+            background-color: #ffffff;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+        
+        h1 {
+            font-size: 2em;
+            font-weight: 600;
+            border-bottom: 2px solid #eaecef;
+            padding-bottom: 0.3em;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+        
+        h3 {
+            font-size: 1.25em;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+        
+        h4 {
+            font-size: 1em;
+            font-weight: 600;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+        
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        code {
+            background-color: rgba(27,31,35,0.05);
+            border-radius: 3px;
+            font-size: 85%;
+            margin: 0;
+            padding: 0.2em 0.4em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 6px;
+            padding: 16px;
+            overflow: auto;
+            font-size: 85%;
+            line-height: 1.45;
+            margin-bottom: 16px;
+        }
+        
+        pre code {
+            background-color: transparent;
+            border: 0;
+            display: inline;
+            line-height: inherit;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+            word-wrap: normal;
+        }
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            margin-bottom: 16px;
+            display: table;
+            overflow: auto;
+        }
+        
+        table th {
+            font-weight: 600;
+            background-color: #f6f8fa;
+            padding: 6px 13px;
+            border: 1px solid #d0d7de;
+        }
+        
+        table td {
+            padding: 6px 13px;
+            border: 1px solid #d0d7de;
+        }
+        
+        table tr {
+            background-color: #ffffff;
+            border-top: 1px solid #d0d7de;
+        }
+        
+        table tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+        
+        blockquote {
+            padding: 0 1em;
+            color: #57606a;
+            border-left: 0.25em solid #d0d7de;
+            margin: 0 0 16px 0;
+        }
+        
+        ul, ol {
+            padding-left: 2em;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        
+        li + li {
+            margin-top: 0.25em;
+        }
+        
+        img {
+            max-width: 100%;
+            box-sizing: content-box;
+            background-color: #ffffff;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 8px;
+            margin: 10px 0;
+            display: block;
+        }
+        
+        hr {
+            height: 2px;
+            padding: 0;
+            margin: 24px 0;
+            background-color: #e1e4e8;
+            border: 0;
+        }
+        
+        strong {
+            font-weight: 600;
+        }
+        
+        em {
+            font-style: italic;
+        }
+        
+        .toc {
+            background-color: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1 id="infinitymind-ai">InfinityMind AI 系統使用手冊</h1>
+<p><strong>版本：</strong> 2.0<br />
+<strong>更新日期：</strong> 2026年3月3日<br />
+<strong>作者：</strong> Nick Chen  </p>
+<hr />
+<h2 id="_1">📖 目錄</h2>
+<ol>
+<li><a href="#系統簡介">系統簡介</a></li>
+<li><a href="#登入系統">登入系統</a></li>
+<li><a href="#用戶管理">用戶管理</a></li>
+<li><a href="#機器人設定">機器人設定</a></li>
+<li><a href="#文檔與資料夾管理">文檔與資料夾管理</a></li>
+<li><a href="#訪客管理">訪客管理</a></li>
+<li><a href="#對話功能">對話功能</a></li>
+<li><a href="#系統設定">系統設定</a></li>
+<li><a href="#azure-資源管理">Azure 資源管理</a></li>
+</ol>
+<hr />
+<h2 id="_2">系統簡介</h2>
+<p><strong>InfinityMind AI</strong> 是一個企業級的 AI 知識問答系統，支援：<br />
+- 🤖 多機器人實例（5 個獨立 Bot）<br />
+- 💬 多渠道整合（LINE / Teams / WebChat）<br />
+- 📚 RAG 知識檢索<br />
+- 🔐 完整權限管理（用戶/角色/資料夾/文檔分級）<br />
+- 🖼️ 圖片辨識功能（Azure Vision API）<br />
+- 🌓 深色/淺色主題切換- 🌐 <strong>內外部共用</strong>：同時支援內部員工與外部訪客，灵活切換驗證模式</p>
+<hr />
+<h2 id="_3">登入系統</h2>
+<h3 id="_4">預設登入頁面</h3>
+<p><img alt="登入頁面(預設)" src="./image/登入頁面(預設).png" /></p>
+<h4 id="_5">登入方式</h4>
+<p><strong>本地帳號登入</strong><br />
+- 輸入 Email 和密碼<br />
+- 系統唯一登入方式<br />
+- 需由管理員建立帳號</p>
+<h4 id="_6">自訂登入頁面</h4>
+<p><img alt="登入頁面" src="./image/登入頁面.png" /></p>
+<p><strong>特色：</strong><br />
+- ✅ 支援企業 Logo 自訂<br />
+- ✅ 背景圖片可配置<br />
+- ✅ 登入提示文字可修改</p>
+<hr />
+<h2 id="_7">用戶管理</h2>
+<h3 id="31-">3.1 新增使用者 - 帳號管理</h3>
+<p><img alt="新增使用者-帳號管理" src="./image/新增使用者-帳號管理.png" /></p>
+<p><strong>必填欄位：</strong><br />
+- 📧 <strong>Email</strong>：系統唯一識別碼<br />
+- 👤 <strong>姓名</strong>：使用者顯示名稱<br />
+- 🔑 <strong>密碼</strong>：本地帳號登入密碼</p>
+<p><strong>選填欄位：</strong><br />
+- 📱 <strong>LINE ID 綁定</strong>：綁定 LINE 渠道<br />
+- 💼 <strong>部門</strong>：組織架構管理<br />
+- 📊 <strong>帳號狀態</strong>：啟用/停用</p>
+<hr />
+<h3 id="32-">3.2 新增使用者 - 權限設置</h3>
+<p><img alt="新增使用者-權限設置" src="./image/新增使用者-權限設置.png" /></p>
+<p><strong>權限配置項目：</strong></p>
+<h4 id="_8">📁 資料夾權限</h4>
+<ul>
+<li>多選資料夾列表</li>
+<li>決定使用者可存取哪些知識庫</li>
+<li>支援細粒度控制</li>
+</ul>
+<h4 id="bot">🤖 Bot 訪問權限</h4>
+<ul>
+<li>勾選可使用的 Bot 實例</li>
+<li>支援 Bot 1 ~ Bot 5 獨立授權</li>
+</ul>
+<h4 id="_9">🛡️ 角色指派</h4>
+<ul>
+<li>管理員（Admin）</li>
+<li>一般用戶（User）</li>
+<li>訪客（Guest）</li>
+</ul>
+<p><strong>權限繼承規則：</strong></p>
+<div class="codehilite"><pre><span></span><code>管理員 &gt; 一般用戶 &gt; 訪客
+   ↓         ↓        ↓
+ 全部權限  指定權限  唯讀
+</code></pre></div>
+
+<hr />
+<h3 id="33-">3.3 新增使用者 - 安全許可</h3>
+<p><img alt="新增使用者-安全許可" src="./image/新增使用者-安全許可.png" /></p>
+<p><strong>安全分級制度（4 級）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>級別</th>
+<th>名稱</th>
+<th>標籤</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Level 1</strong></td>
+<td>公開</td>
+<td>🌐 Public</td>
+<td>無限制文檔</td>
+</tr>
+<tr>
+<td><strong>Level 2</strong></td>
+<td>內部</td>
+<td>🏢 Internal</td>
+<td>企業內部文檔</td>
+</tr>
+<tr>
+<td><strong>Level 3</strong></td>
+<td>機密</td>
+<td>🔒 Confidential</td>
+<td>敏感業務資料</td>
+</tr>
+<tr>
+<td><strong>Level 4</strong></td>
+<td>極機密</td>
+<td>🔐 Secret</td>
+<td>最高機密文檔</td>
+</tr>
+</tbody>
+</table>
+<p><strong>設定項目：</strong><br />
+- 📋 <strong>安全許可級別</strong>：選擇 1-4<br />
+- 📅 <strong>授權日期</strong>：許可生效時間<br />
+- ⏰ <strong>過期日期</strong>：許可失效時間（可選）<br />
+- 👤 <strong>授權人員</strong>：記錄核准者<br />
+- 📝 <strong>授權原因</strong>：稽核用途</p>
+<p><strong>存取規則：</strong></p>
+<div class="codehilite"><pre><span></span><code>使用者許可級別 ≥ 文檔分級 → 可存取
+使用者許可級別 &lt; 文檔分級 → 拒絕存取
+</code></pre></div>
+
+<hr />
+<h3 id="34">3.4 編輯使用者</h3>
+<p><img alt="編輯使用者" src="./image/編輯使用者.png" /></p>
+<p><strong>可修改項目：</strong><br />
+- 🔐 安全許可級別<br />
+- 📁 資料夾權限<br />
+- 🤖 Bot 訪問權限<br />
+- 🔒 帳號狀態（啟用/停用）<br />
+- 💬 <strong>渠道密碼狀態</strong>：顯示是否已設定 LINE/WebChat 對話密碼</p>
+<p><strong>安全提示：</strong></p>
+<blockquote>
+<p>⚠️ 修改權限後立即生效，使用者下次查詢時會套用新權限。</p>
+</blockquote>
+<hr />
+<h2 id="_10">機器人設定</h2>
+<h3 id="41-bot">4.1 多組 Bot 配置</h3>
+<p><img alt="機器人設定-可設定多組bot" src="./image/機器人設定-可設定多組bot.png" /></p>
+<p><strong>支援多 Bot 實例：</strong><br />
+- 🤖 <strong>Bot 1 ~ Bot 5</strong>：5 個獨立機器人<br />
+- 🎯 <strong>獨立配置</strong>：各自擁有專屬設定<br />
+- 🔑 <strong>獨立認證</strong>：每個 Bot 有獨立的 Azure Bot Service 憑證</p>
+<p><strong>適用場景：</strong><br />
+- 📊 <strong>部門隔離</strong>：不同部門使用不同 Bot<br />
+- 🌍 <strong>多語言支援</strong>：中文 Bot / 英文 Bot<br />
+- 🎭 <strong>角色專業化</strong>：HR Bot / IT Bot / Sales Bot</p>
+<hr />
+<h3 id="42">4.2 資料夾掛載與驗證需求</h3>
+<p><img alt="機器人設定-可設定掛載資夾與使用者驗證需求" src="./image/機器人設定-可設定掛載資夾與使用者驗證需求.png" /></p>
+<p><strong>配置項目：</strong></p>
+<h4 id="_11">📁 掛載資料夾</h4>
+<ul>
+<li>多選資料夾列表</li>
+<li>決定此 Bot 可檢索哪些知識庫</li>
+<li>支援動態調整</li>
+</ul>
+<p><strong>範例配置：</strong></p>
+<div class="codehilite"><pre><span></span><code>Bot 1 (HR)    → 掛載：人事資料夾、公告資料夾
+Bot 2 (IT)    → 掛載：技術文檔、操作手冊
+Bot 3 (Sales) → 掛載：產品資訊、銷售資料
+</code></pre></div>
+
+<h4 id="_12">🔐 使用者驗證需求</h4>
+<ul>
+<li><strong>啟用驗證</strong>：要求使用者登入後才能對話</li>
+<li><strong>停用驗證</strong>：允許訪客模式（匿名對話）</li>
+</ul>
+<p><strong>決策建議：</strong></p>
+<div class="codehilite"><pre><span></span><code>內部敏感資料 Bot → 啟用驗證 ✅
+公開客服 Bot     → 停用驗證 ❌
+</code></pre></div>
+
+<hr />
+<h2 id="_13">文檔與資料夾管理</h2>
+<h3 id="51-">5.1 資料夾管理 - 啟用狀態與公開性</h3>
+<p><img alt="資料夾管理-設定啟用或關閉, 資料公開或內部" src="./image/資料夾管理-設定啟用或關閉%2C%20資料公開或內部.png" /></p>
+<p><strong>資料夾屬性配置：</strong></p>
+<h4 id="_14">🔄 啟用/停用</h4>
+<ul>
+<li><strong>啟用</strong>：Bot 可檢索此資料夾的文檔</li>
+<li><strong>停用</strong>：暫時隱藏，不影響文檔本身</li>
+</ul>
+<h4 id="_15">🌐 公開/內部</h4>
+<ul>
+<li><strong>公開（Public）</strong>：適用於 FAQ、使用說明等</li>
+<li><strong>內部（Internal）</strong>：限內部員工存取</li>
+</ul>
+<h4 id="_16">🎨 資料夾屬性</h4>
+<ul>
+<li>📝 <strong>名稱</strong>：資料夾顯示名稱</li>
+<li>🏷️ <strong>描述</strong>：用途說明</li>
+<li>📊 <strong>預設分級</strong>：新增文檔的預設安全級別</li>
+<li>📁 <strong>文檔數量</strong>：即時統計</li>
+</ul>
+<hr />
+<h3 id="52">5.2 資料夾內文件管理</h3>
+<p><img alt="資夾內文件管理" src="./image/資夾內文件管理.png" /></p>
+<p><strong>文件列表功能：</strong><br />
+- 📄 <strong>檔案名稱</strong>：上傳的原始檔名<br />
+- 📅 <strong>上傳日期</strong>：建立時間<br />
+- 👤 <strong>上傳者</strong>：記錄操作人員<br />
+- 📏 <strong>檔案大小</strong>：空間使用統計<br />
+- ⚙️ <strong>操作</strong>：編輯、刪除、下載</p>
+<p><strong>支援檔案格式：</strong></p>
+<div class="codehilite"><pre><span></span><code>文件：.pdf, .docx, .txt, .md
+試算表：.xlsx, .csv
+簡報：.pptx
+</code></pre></div>
+
+<hr />
+<h3 id="53">5.3 文件分級管理</h3>
+<p><img alt="資夾內文件管理-文件分級" src="./image/資夾內文件管理-文件分級.png" /></p>
+<p><strong>單一文件安全分級：</strong></p>
+<p>每個文檔可設定獨立的安全級別：<br />
+- 🌐 <strong>Level 1 - Public</strong>：公開文檔<br />
+- 🏢 <strong>Level 2 - Internal</strong>：內部文檔<br />
+- 🔒 <strong>Level 3 - Confidential</strong>：機密文檔<br />
+- 🔐 <strong>Level 4 - Secret</strong>：極機密文檔</p>
+<p><strong>分級變更記錄：</strong><br />
+- 📝 <strong>變更時間</strong>：自動記錄<br />
+- 👤 <strong>操作人員</strong>：稽核追蹤<br />
+- 💬 <strong>變更原因</strong>：必填說明</p>
+<p><strong>分級影響：</strong></p>
+<div class="codehilite"><pre><span></span><code>使用者查詢時，系統會：
+1. 檢查使用者安全許可級別
+2. 過濾出可存取的文檔
+3. 僅檢索符合權限的內容
+</code></pre></div>
+
+<hr />
+<h2 id="_17">訪客管理</h2>
+<h3 id="61">6.1 訪客列表</h3>
+<p><img alt="訪客管理" src="./image/訪客管理.png" /></p>
+<p><strong>訪客模式功能：</strong></p>
+<p>當 Bot 設定為「停用使用者驗證」時，系統會：<br />
+- 🎭 <strong>自動建立訪客帳號</strong>：格式 <code>guest_&lt;channel&gt;_&lt;user_id&gt;</code><br />
+- 📊 <strong>追蹤對話紀錄</strong>：完整保留對話歷史<br />
+- 🔍 <strong>管理介面查看</strong>：管理員可監控訪客使用狀況</p>
+<p><strong>內外部共用特色：</strong><br />
+- 🏢 <strong>內部使用</strong>：開啟驗證 → 員工登入後使用，享有完整權限控制<br />
+- 🌐 <strong>外部客服</strong>：停用驗證 → 訪客免登入使用，Bot 成為 24/7 智能客服<br />
+- 📈 <strong>大數據分析</strong>：訪客對話可用於：<br />
+  - 熟門問題分析<br />
+  - 用戶行為模式挖掘<br />
+  - FAQ 優化依據<br />
+  - 知識庫缺口發現</p>
+<p><strong>訪客資訊顯示：</strong><br />
+- 🆔 <strong>訪客 ID</strong>：系統自動生成<br />
+- 💬 <strong>渠道</strong>：LINE / Teams / WebChat<br />
+- ⏰ <strong>首次對話時間</strong><br />
+- 📈 <strong>對話次數</strong>：統計總互動數<br />
+- 🕐 <strong>最後對話時間</strong></p>
+<hr />
+<h3 id="62">6.2 訪客對話紀錄</h3>
+<p><img alt="訪客對話紀錄" src="./image/訪客對話紀錄.png" /></p>
+<p><strong>對話歷史查詢：</strong></p>
+<p>點擊訪客後可查看：<br />
+- 💬 <strong>完整對話內容</strong>：問題與回答<br />
+- 🕒 <strong>時間戳記</strong>：精確到秒<br />
+- 🤖 <strong>使用的 Bot</strong>：Bot 1 ~ 5<br />
+- 📚 <strong>引用文檔</strong>：RAG 檢索的參考資料<br />
+- 🎯 <strong>Prompt 名稱</strong>：使用的系統提示詞</p>
+<p><strong>分析功能：</strong><br />
+- 📊 <strong>熱門問題統計</strong><br />
+- 🎭 <strong>訪客行為分析</strong><br />
+- 💡 <strong>改進建議</strong>：發現知識庫缺口- 📈 <strong>大數據應用</strong>：<br />
+  - 訪客對話數據可匯出分析<br />
+  - 識別用戶需求趨勢<br />
+  - 優化客服回答策略<br />
+  - 提升 Bot 準確率</p>
+<hr />
+<h3 id="63">6.3 數據分析功能</h3>
+<p><strong>數據分析主頁面</strong></p>
+<p>系統提供完整的訪客數據視覺化分析，幫助您深入了解訪客行為、發現知識庫缺口、優化FAQ內容。</p>
+<p><img alt="數據分析頁面" src="./image/數據分析頁面.png" /></p>
+<h4 id="_18">核心功能：</h4>
+<p><strong>1. 訪客趨勢分析</strong><br />
+- 📈 每日訪客數趨勢圖<br />
+- 📊 對話數量變化追蹤<br />
+- 🔄 自動計算與前期對比增長率<br />
+- 📅 支援 7 天、30 天、90 天時間範圍</p>
+<p><img alt="數據分析頁面-訪客趨勢分析" src="./image/數據分析頁面-訪客趨勢分析.png" /></p>
+<p><strong>2. 熱門問題排行榜</strong><br />
+- 🔥 Top 10 最常被問的問題<br />
+- 📊 顯示問題出現次數<br />
+- 🌐 標示問題來源渠道（WebChat、LINE、Teams）<br />
+- 💡 幫助快速識別高頻需求</p>
+<p><img alt="數據分析頁面-熱門問題排行" src="./image/數據分析頁面-熱門問題排行.png" /></p>
+<p><strong>3. 知識庫缺口分析</strong><br />
+- 🔍 自動識別無參考資料的高頻問題<br />
+- ⚠️ 標示需要補充文檔的問題<br />
+- 📈 顯示問題出現次數排序<br />
+- ✅ 提供「新增文檔」快速操作建議</p>
+<p><img alt="數據分析頁面-知識缺口分析" src="./image/數據分析頁面-知識缺口分析.png" /></p>
+<p><strong>4. 數據匯出功能</strong><br />
+- 📥 一鍵匯出 CSV 格式報表<br />
+- 📊 包含核心指標、熱門問題、渠道分佈、知識庫缺口等完整數據<br />
+- ✅ 完美支援 Excel 開啟（UTF-8 編碼，無亂碼）<br />
+- 📅 自動標記報表生成時間</p>
+<p><img alt="數據分析頁面-匯出的excel內容" src="./image/數據分析頁面-匯出的excel內容.png" /></p>
+<hr />
+<h2 id="_19">對話功能</h2>
+<h3 id="71-webchat-">7.1 WebChat - 使用者登入驗證</h3>
+<p><img alt="webchat對話畫面-使用者登入驗證" src="./image/webchat對話畫面-使用者登入驗證.png" /></p>
+<p><strong>WebChat 認證流程：</strong></p>
+<p><strong>步驟 1：</strong> 輸入 Email</p>
+<div class="codehilite"><pre><span></span><code><span class="nl">使用者</span><span class="p">:</span><span class="w"> </span><span class="n">john</span><span class="nv">@company</span><span class="p">.</span><span class="n">com</span>
+<span class="nl">Bot</span><span class="p">:</span><span class="w"> </span><span class="err">✅</span><span class="w"> </span><span class="n">Email</span><span class="w"> </span><span class="n">確認</span><span class="err">，</span><span class="n">請輸入您的對話密碼</span><span class="err">：</span>
+</code></pre></div>
+
+<p><strong>步驟 2：</strong> 輸入密碼</p>
+<div class="codehilite"><pre><span></span><code>使用者: [輸入密碼]
+Bot: ✅ 驗證成功！歡迎，John
+     您現在可以開始對話了 😊
+</code></pre></div>
+
+<p><strong>首次使用：</strong></p>
+<div class="codehilite"><pre><span></span><code>Bot: 🔐 請設定您的對話密碼：
+     💡 密碼將用於後續登入，請妥善保管。
+</code></pre></div>
+
+<hr />
+<h3 id="72-webchat-">7.2 WebChat - 圖片辨識</h3>
+<p><img alt="webchat對話畫面-圖片辨識" src="./image/webchat對話畫面-圖片辨識.png" /></p>
+<p><strong>圖片上傳功能：</strong></p>
+<ol>
+<li><strong>📎 點擊附件按鈕</strong></li>
+<li><strong>🖼️ 選擇圖片</strong>（支援 JPG, PNG, GIF, WEBP）</li>
+<li><strong>🤖 AI 自動分析</strong>：<br />
+   - OCR 文字識別（gpt-4o 多模態能力）<br />
+   - 物體識別<br />
+   - 場景理解<br />
+   - 顏色分析</li>
+</ol>
+<p><strong>分析範例：</strong></p>
+<div class="codehilite"><pre><span></span><code>使用者: [上傳書籍封面]
+Bot: 這本書的書名是《從心解脫：數位時代的心靈降躁法》
+     由格龍仁波切所著，商周出版。
+     封面設計採用寧靜的湖泊與山景...
+</code></pre></div>
+
+<hr />
+<h3 id="73-webchat-">7.3 WebChat - 圖片辨識 + 後續對話</h3>
+<p><img alt="webchat對話畫面-圖片辨識加上後續對話" src="./image/webchat對話畫面-圖片辨識加上後續對話.png" /></p>
+<p><strong>對話連續性：</strong></p>
+<p>系統會保留圖片辨識結果作為對話上下文：</p>
+<div class="codehilite"><pre><span></span><code>輪次 1：
+使用者: [上傳圖片]
+Bot: [圖片識別] 這是一本關於冥想的書籍...
+
+輪次 2：
+使用者: 這本書適合初學者嗎？
+Bot: 根據剛才的圖片，這本《從心解脫》確實適合初學者。
+     它提供了簡單的入門練習...
+</code></pre></div>
+
+<p><strong>智能整合：</strong><br />
+- 🧠 <strong>圖片+RAG</strong>：結合圖片識別與知識庫檢索<br />
+- 🔍 <strong>自動驗證</strong>：RAG 檢索驗證圖片識別準確性<br />
+- 💬 <strong>上下文記憶</strong>：保留 3 輪對話（3 分鐘內）</p>
+<hr />
+<h3 id="74-line-">7.4 LINE - 知識問答 + 圖片辨識</h3>
+<p><img alt="line對話畫面-知識問答加上圖片辨識" src="./image/line對話畫面-知識問答加上圖片辨識.png" /></p>
+<p><strong>LINE 渠道整合：</strong></p>
+<p><strong>文字問答：</strong></p>
+<div class="codehilite"><pre><span></span><code>使用者: 公司的請假流程是什麼？
+Bot: 根據人事規章，請假流程如下：
+     1. 登入人事系統
+     2. 填寫請假單...
+     📚 參考文件：《員工手冊 v2.3》
+</code></pre></div>
+
+<p><strong>圖片辨識：</strong></p>
+<div class="codehilite"><pre><span></span><code>使用者: [傳送產品照片]
+Bot: 這是 Model X-2000 智能手錶
+     主要功能包括：心率監測、睡眠追蹤...
+</code></pre></div>
+
+<p><strong>LINE 特色功能：</strong><br />
+- 📱 <strong>推播通知</strong>：即時回應<br />
+- 🔗 <strong>Rich Menu</strong>：快速功能選單<br />
+- 🎨 <strong>Flex Message</strong>：豐富訊息卡片</p>
+<hr />
+<h3 id="75-line-">7.5 LINE - 多輪對話範例</h3>
+<p><img alt="line對話畫面-知識問答加上圖片辨識2" src="./image/line對話畫面-知識問答加上圖片辨識2.png" /></p>
+<p><strong>對話記憶展示：</strong></p>
+<div class="codehilite"><pre><span></span><code>輪次 1：
+使用者: 我叫 Nick
+Bot: 你好，Nick！很高興認識你 😊
+
+輪次 2：
+使用者: 我的名字是？
+Bot: 你叫 Nick
+
+輪次 3：
+使用者: [上傳文件照片]
+Bot: 這是一份合約文件，包含...
+
+輪次 4：
+使用者: 剛才那份文件的有效期限？
+Bot: 根據剛才的圖片，合約有效期限為...
+</code></pre></div>
+
+<p><strong>記憶機制：</strong><br />
+- ⏰ <strong>3 分鐘內</strong>：保留最近 3 輪對話<br />
+- 🔄 <strong>自動清理</strong>：超時或超過 3 輪後移除舊對話<br />
+- 💾 <strong>完整記錄</strong>：所有對話永久保存在 MongoDB</p>
+<hr />
+<h2 id="_20">系統設定</h2>
+<h3 id="81">8.1 儀表板監控</h3>
+<h4 id="ai-token">AI Token 使用狀態</h4>
+<p><img alt="儀錶板-AI_token使用狀態" src="./image/儀錶板-AI_token使用狀態.png" /></p>
+<p><strong>Token 使用監控：</strong><br />
+- 📊 <strong>即時用量</strong>：顯示當前 Token 消耗<br />
+- 📈 <strong>歷史趨勢</strong>：每日/每週/每月統計<br />
+- � <strong>使用明細</strong>：查看各 Bot 的 Token 使用量</p>
+<hr />
+<h4 id="_21">主機資源狀態</h4>
+<p><img alt="儀錶板-主機資源狀態" src="./image/儀錶板-主機資源狀態.png" /></p>
+<p><strong>系統資源監控：</strong><br />
+- 🖥️ <strong>CPU 使用率</strong>：即時負載狀態<br />
+- 💾 <strong>記憶體使用</strong>：RAM 佔用情況<br />
+- 💿 <strong>磁碟空間</strong>：儲存空間剩餘<br />
+- 🌐 <strong>網路流量</strong>：輸入/輸出頻寬</p>
+<p><strong>效能指標：</strong></p>
+<div class="codehilite"><pre><span></span><code>正常狀態：CPU &lt; 70%, Memory &lt; 80%
+警告狀態：CPU 70-90%, Memory 80-90%
+異常狀態：CPU &gt; 90%, Memory &gt; 90%
+</code></pre></div>
+
+<hr />
+<h4 id="_22">資料夾使用狀態</h4>
+<p><img alt="儀錶板-資料夾使用狀態(使用空間大小)" src="./image/儀錶板-資料夾使用狀態(使用空間大小).png" /></p>
+<p><strong>儲存空間分析：</strong><br />
+- 📁 <strong>資料夾大小排行</strong>：找出最佔空間的資料夾<br />
+- 📊 <strong>文件數量統計</strong>：每個資料夾的文檔數<br />
+- � <strong>總空間使用</strong>：即時顯示系統整體儲存使用狀況</p>
+<hr />
+<h3 id="82">8.2 系統版面設定</h3>
+<p><img alt="系統版面設定, 可設定風格" src="./image/系統版面設定可設定風格.png" /></p>
+<p><strong>主題切換功能：</strong></p>
+<h4 id="_23">🌓 深色/淺色模式</h4>
+<ul>
+<li><strong>淺色模式（Light）</strong>：預設，適合白天使用</li>
+<li><strong>深色模式（Dark）</strong>：護眼，適合夜間使用</li>
+<li><strong>自動切換</strong>：跟隨系統設定</li>
+</ul>
+<h4 id="_24">🎨 風格自訂</h4>
+<ul>
+<li><strong>主題色</strong>：企業識別色配置</li>
+<li><strong>Logo 上傳</strong>：自訂企業標誌</li>
+<li><strong>背景圖片</strong>：登入頁面背景</li>
+<li><strong>字體大小</strong>：調整介面文字大小</li>
+</ul>
+<p><strong>設定項目：</strong></p>
+<div class="codehilite"><pre><span></span><code>外觀設定：
+├─ 主題模式：淺色/深色
+├─ 主色調：藍色/綠色/紫色...
+├─ 側邊欄風格：展開/收合
+└─ 動畫效果：啟用/停用
+</code></pre></div>
+
+<hr />
+<h2 id="azure">Azure 資源管理</h2>
+<h3 id="91-azure">9.1 Azure 資源清單</h3>
+<p><img alt="azure資源畫面" src="./image/azure資源畫面.png" /></p>
+<p><strong>InfinityMind AI 使用的 Azure 服務：</strong></p>
+<h4 id="azure-bot-service">🤖 Azure Bot Service</h4>
+<ul>
+<li><strong>Bot 1 ~ 5</strong>：5 個獨立 Bot 註冊</li>
+<li><strong>渠道整合</strong>：LINE, Teams, WebChat, DirectLine</li>
+</ul>
+<h4 id="azure-app-service">🗄️ Azure App Service</h4>
+<ul>
+<li><strong>chatbot-bot-api</strong>：FastAPI 後端服務</li>
+<li><strong>chatbot-ui</strong>：Vue.js 3 前端 + Flask API</li>
+<li><strong>chatbot-scheduler</strong>：排程任務服務</li>
+<li><strong>運行環境</strong>：Python 3.12, Node.js 20</li>
+</ul>
+<h4 id="azure-openai-service">🧠 Azure OpenAI Service</h4>
+<ul>
+<li><strong>gpt-4o</strong>：主要 LLM 模型（多模態，支援文字與圖片）</li>
+<li><strong>text-embedding-3-small</strong>：向量嵌入模型</li>
+</ul>
+<h4 id="mongodb-atlas">💾 MongoDB Atlas（第三方）</h4>
+<ul>
+<li><strong>AI_DB 資料庫</strong>：主資料庫</li>
+<li><strong>Vector Search</strong>：1536 維向量索引</li>
+<li><strong>Collections</strong>：users, documents, chatlog, bots...</li>
+</ul>
+<h4 id="azure-blob-storage">📦 Azure Blob Storage</h4>
+<ul>
+<li><strong>documents</strong>：文檔儲存</li>
+<li><strong>image</strong>：圖片儲存</li>
+<li><strong>private-files</strong>：私密檔案</li>
+</ul>
+<h4 id="azure-application-insights">🔍 Azure Application Insights</h4>
+<ul>
+<li><strong>效能監控</strong>：API 回應時間</li>
+<li><strong>錯誤追蹤</strong>：即時錯誤通知</li>
+<li><strong>使用分析</strong>：用戶行為統計</li>
+</ul>
+<blockquote>
+<p><strong>註</strong>：實際使用費用依據系統流量及用量而定，建議根據實際需求自行評估。</p>
+</blockquote>
+<hr />
+<h2 id="_25">📚 附錄</h2>
+<h3 id="a">A. 快捷鍵列表</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>Windows</th>
+<th>Mac</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增使用者</td>
+<td><code>Ctrl + N</code></td>
+<td><code>⌘ + N</code></td>
+</tr>
+<tr>
+<td>搜尋</td>
+<td><code>Ctrl + F</code></td>
+<td><code>⌘ + F</code></td>
+</tr>
+<tr>
+<td>儲存</td>
+<td><code>Ctrl + S</code></td>
+<td><code>⌘ + S</code></td>
+</tr>
+<tr>
+<td>切換主題</td>
+<td><code>Ctrl + T</code></td>
+<td><code>⌘ + T</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="b-faq">B. 常見問題（FAQ）</h3>
+<p><strong>Q1: 忘記密碼怎麼辦？</strong></p>
+<blockquote>
+<p>聯繫管理員重設密碼。</p>
+</blockquote>
+<p><strong>Q2: Bot 回應很慢？</strong></p>
+<blockquote>
+<p>檢查 Azure OpenAI 配額限制，或增加 RPS。</p>
+</blockquote>
+<p><strong>Q3: 圖片無法上傳？</strong></p>
+<blockquote>
+<p>確認檔案大小 &lt; 10MB，格式為 JPG/PNG。</p>
+</blockquote>
+<hr />
+<p><strong>文件版本歷史：</strong><br />
+- v2.0 (2026-03-03) - 新增圖片功能、多 Bot 支援<br />
+- v1.5 (2026-02-15) - 新增安全分級<br />
+- v1.0 (2026-01-10) - 初版發佈</p>
+</body>
+</html>
